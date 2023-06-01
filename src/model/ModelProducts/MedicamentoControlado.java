@@ -5,6 +5,9 @@ import java.time.LocalDate;
 public class MedicamentoControlado extends Medicamento{
     private String crmMedico;
     private String cpfPaciente;
+    public MedicamentoControlado(){
+
+    }
 
     public MedicamentoControlado(int numRegistro, String composicao, double dosagem, String crmMedico, String cpfPaciente) {
         super(numRegistro, composicao, dosagem);

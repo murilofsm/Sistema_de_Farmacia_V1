@@ -7,6 +7,9 @@ public class Medicamento extends Produto{
     private int numRegistro;
     private String composicao;
     private double dosagem;
+    public Medicamento() {
+
+    }
 
     public Medicamento(int numRegistro, String composicao, double dosagem) {
         this.numRegistro = numRegistro;
@@ -20,6 +23,8 @@ public class Medicamento extends Produto{
         this.composicao = composicao;
         this.dosagem = dosagem;
     }
+
+
 
     public int getNumRegistro() {
         return numRegistro;

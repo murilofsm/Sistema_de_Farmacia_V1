@@ -6,6 +6,10 @@ public class Funcionario extends Pessoa {
 
     private String ctps;
 
+    public Funcionario() {
+
+    }
+
     public Funcionario(String ctps) {
         this.ctps = ctps;
     }
@@ -14,6 +18,7 @@ public class Funcionario extends Pessoa {
         super(codigo, nome, cpf, dataNascimento);
         this.ctps = ctps;
     }
+
 
     public String getCtps() {
         return ctps;

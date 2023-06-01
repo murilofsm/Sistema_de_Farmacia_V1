@@ -6,6 +6,9 @@ public class MedicamentoInjetavel extends Medicamento{
     private String funcionarioResponsavel;
     private String cpfPaciente;
 
+    public MedicamentoInjetavel(){
+
+    }
     public MedicamentoInjetavel(int numRegistro, String composicao, double dosagem, String funcionarioResponsavel, String cpfPaciente) {
         super(numRegistro, composicao, dosagem);
         this.funcionarioResponsavel = funcionarioResponsavel;

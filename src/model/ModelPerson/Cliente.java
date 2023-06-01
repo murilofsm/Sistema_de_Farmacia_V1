@@ -5,6 +5,9 @@ import java.time.LocalDate;
 public class Cliente extends Pessoa{
 
     private String email;
+    public Cliente() {
+
+    }
 
     public Cliente(String email) {
         this.email = email;
