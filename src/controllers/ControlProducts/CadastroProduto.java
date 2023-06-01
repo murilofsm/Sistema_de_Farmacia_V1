@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 
 public class CadastroProduto {
-
+    private static ArrayList<Produto> listaTodosProdutos = new ArrayList<>();
     private static ArrayList<Produto> listaProdutosNormais = new ArrayList<>();
     private static ArrayList<Medicamento> listaMedicamentos = new ArrayList<>();
     private static ArrayList<MedicamentoControlado> listaMedicamentosControlados = new ArrayList<>();

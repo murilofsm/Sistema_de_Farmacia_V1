@@ -6,9 +6,9 @@ import model.ModelProducts.MedicamentoInjetavel;
 import model.ModelProducts.Produto;
 import util.Input;
 
-public class UtilProducts {
+class UtilProducts {
 
-    public static void setarDadosProduto(Produto produto){
+    protected static void setarDadosProduto(Produto produto){
         System.out.print("Insira o código: ");
         produto.setCodigo(Input.nextInt());
         System.out.print("Insira a descrição: ");
@@ -27,7 +27,7 @@ public class UtilProducts {
         produto.setValor(Input.nextDouble());
     }
 
-    public static void setarDadosMedicamento(Medicamento medicamento){
+    protected static void setarDadosMedicamento(Medicamento medicamento){
         setarDadosProduto(medicamento);
         System.out.print("Insira o número de registro da Anvisa: ");
         medicamento.setNumRegistro(Input.nextInt());
@@ -36,21 +36,18 @@ public class UtilProducts {
         System.out.print("Insira a dosagem: ");
         medicamento.setDosagem(Input.nextDouble());
     }
-    public static void setarDadosMedicamentoControlado(MedicamentoControlado medicamentoControlado){
+    protected static void setarDadosMedicamentoControlado(MedicamentoControlado medicamentoControlado){
         setarDadosMedicamento(medicamentoControlado);
         System.out.print("Insira o CRM do médico: ");
         medicamentoControlado.setCrmMedico(Input.nextLine());
         System.out.print("Insira o CPF do Paciente: ");
         medicamentoControlado.setCpfPaciente(Input.nextLine());
     }
-    public static void setarDadosMedicamentoInjetavel(MedicamentoInjetavel medicamentoInjetavel){
+    protected static void setarDadosMedicamentoInjetavel(MedicamentoInjetavel medicamentoInjetavel){
         setarDadosMedicamento(medicamentoInjetavel);
         System.out.print("Insira o funcionario responsável: ");
         medicamentoInjetavel.setFuncionarioResponsavel(Input.nextLine());
         System.out.print("Insira o CPF do Paciente: ");
         medicamentoInjetavel.setCpfPaciente(Input.nextLine());
     }
-
-
-
 }

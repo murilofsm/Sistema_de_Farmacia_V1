@@ -37,11 +37,7 @@ public class MedicamentoControlado extends Medicamento{
         this.cpfPaciente = cpfPaciente;
     }
 
-    @Override
-    public String toString() {
-        return "MedicamentoControlado{" +
-                "crmMedico='" + crmMedico + '\'' +
-                ", cpfPaciente='" + cpfPaciente + '\'' +
-                '}';
+    public String exibirDadosMedicamentoControlado() {
+        return exibirDadosMedicamento()+"\nCRM do médico: "+getCrmMedico()+"\nCPF do Paciente: "+getCpfPaciente();
     }
 }

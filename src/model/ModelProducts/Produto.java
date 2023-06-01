@@ -91,17 +91,9 @@ public class Produto {
         this.valor = valor;
     }
 
-    @Override
-    public String toString() {
-        return "Produto{" +
-                "codigo=" + codigo +
-                ", descricao='" + descricao + '\'' +
-                ", marca='" + marca + '\'' +
-                ", lote='" + lote + '\'' +
-                ", dataFabricacao=" + dataFabricacao +
-                ", dataVencimento=" + dataVencimento +
-                ", codigoBarras='" + codigoBarras + '\'' +
-                ", valor=" + valor +
-                '}';
+    public String exibirDadosProduto() {
+        return "\nCodigo: "+getCodigo()+"\nDescrição: "+getDescricao()+"\nMarca: "+getMarca()+"\nLote"+getLote()
+                +"\nData de Fabricacao: "+getDataFabricacao()+"\nData de Vencimento: "+getDataVencimento()
+                +"\nCódigo de Barras: "+getCodigoBarras()+"\nValor: "+getValor();
     }
 }

@@ -5,16 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1c8a49ba-a5a2-456a-a841-db246be70554" name="Changes" comment="Realizado algumas alterações no produto">
-      <change afterPath="$PROJECT_DIR$/src/controllers/ControlPerson/CadastrosPessoa.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/ControlPerson/utilPerson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ControlPerson/utilPerson.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/ControlProducts/CadastroProduto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ControlProducts/CadastroProduto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/ControlProducts/Menus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/ControlProducts/UtilProducts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ControlProducts/UtilProducts.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/ModelPerson/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ModelPerson/Cliente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/ModelPerson/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ModelPerson/Funcionario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ModelPerson/Pessoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ModelPerson/Pessoa.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/ModelProducts/Medicamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ModelProducts/Medicamento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/ModelProducts/MedicamentoControlado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ModelProducts/MedicamentoControlado.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/ModelProducts/MedicamentoInjetavel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ModelProducts/MedicamentoInjetavel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ModelProducts/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ModelProducts/Produto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +78,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685634820272</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Realizado algumas alterações no produto">
+      <created>1685659958998</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1685659958998</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

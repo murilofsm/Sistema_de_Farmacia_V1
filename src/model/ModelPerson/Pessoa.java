@@ -51,13 +51,8 @@ public class Pessoa {
         this.dataNascimento = dataNascimento;
     }
 
-    @Override
-    public String toString() {
-        return "Pessoa{" +
-                "codigo=" + codigo +
-                ", nome='" + nome + '\'' +
-                ", cpf='" + cpf + '\'' +
-                ", dataNascimento=" + dataNascimento +
-                '}';
+
+    public String exibirDadosPessoa () {
+        return "\nCódigo: "+getCodigo()+"\nNome: "+getNome()+"\nCPF:"+getCpf()+"\nData de Nascimento: "+getDataNascimento();
     }
 }

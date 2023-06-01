@@ -37,11 +37,7 @@ public class MedicamentoInjetavel extends Medicamento{
         this.cpfPaciente = cpfPaciente;
     }
 
-    @Override
-    public String toString() {
-        return "MedicamentoInjetavel{" +
-                "funcionarioResponsavel='" + funcionarioResponsavel + '\'' +
-                ", cpfPaciente='" + cpfPaciente + '\'' +
-                '}';
+    public String exibirDadosMedicamentoInjetavel() {
+        return exibirDadosMedicamento()+"\nFuncionário responsável: "+getFuncionarioResponsavel()+"\nCPF do Paciente: "+getCpfPaciente();
     }
 }

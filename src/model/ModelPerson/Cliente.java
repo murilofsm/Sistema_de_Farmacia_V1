@@ -26,10 +26,7 @@ public class Cliente extends Pessoa{
         this.email = email;
     }
 
-    @Override
-    public String toString() {
-        return "Cliente{" +
-                "email='" + email + '\'' +
-                '}';
+    public String exibirDadosCliente() {
+        return exibirDadosPessoa()+"\nEmail:"+getEmail();
     }
 }

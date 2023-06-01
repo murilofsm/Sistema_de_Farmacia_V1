@@ -28,10 +28,7 @@ public class Funcionario extends Pessoa {
         this.ctps = ctps;
     }
 
-    @Override
-    public String toString() {
-        return "Funcionario{" +
-                "ctps='" + ctps + '\'' +
-                '}';
+    public String exibirDadosCliente() {
+        return exibirDadosPessoa()+"\nCTPS:"+getCtps();
     }
 }

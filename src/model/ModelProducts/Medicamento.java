@@ -50,12 +50,7 @@ public class Medicamento extends Produto{
         this.dosagem = dosagem;
     }
 
-    @Override
-    public String toString() {
-        return "Medicamento{" +
-                "numRegistro=" + numRegistro +
-                ", composicao='" + composicao + '\'' +
-                ", dosagem=" + dosagem +
-                '}';
+    public String exibirDadosMedicamento() {
+        return exibirDadosMedicamento()+"\nNúmero registro Anvisa: "+getNumRegistro()+"\nComposição: "+getComposicao()+"\nDosagem: "+getDosagem();
     }
 }
