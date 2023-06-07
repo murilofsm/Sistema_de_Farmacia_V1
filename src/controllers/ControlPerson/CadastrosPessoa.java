@@ -31,13 +31,13 @@ public class CadastrosPessoa {
 
     private static void cadastrarCliente(){
         Cliente cli = new Cliente();
-        UtilPerson.setarDadosCliente(cli);
+        ControlePessoas.setarDadosCliente(cli);
         listaClientes.add(cli);
     }
 
     private static void cadastrarFuncionario(){
         Funcionario fun = new Funcionario();
-        UtilPerson.setarDadosFuncionario(fun);
+        ControlePessoas.setarDadosFuncionario(fun);
         listaFuncionarios.add(fun);
     }
 }

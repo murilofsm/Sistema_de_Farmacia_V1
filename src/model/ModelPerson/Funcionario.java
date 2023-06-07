@@ -28,7 +28,7 @@ public class Funcionario extends Pessoa {
         this.ctps = ctps;
     }
 
-    public String exibirDadosCliente() {
+    public String exibirDadosFuncionario() {
         return exibirDadosPessoa()+"\nCTPS:"+getCtps();
     }
 }

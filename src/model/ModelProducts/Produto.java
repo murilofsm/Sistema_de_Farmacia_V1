@@ -92,8 +92,8 @@ public class Produto {
     }
 
     public String exibirDadosProduto() {
-        return "\nCodigo: "+getCodigo()+"\nDescrição: "+getDescricao()+"\nMarca: "+getMarca()+"\nLote"+getLote()
+        return "\nCodigo: "+getCodigo()+"\nDescrição: "+getDescricao()+"\nMarca: "+getMarca()+"\nLote: "+getLote()
                 +"\nData de Fabricacao: "+getDataFabricacao()+"\nData de Vencimento: "+getDataVencimento()
-                +"\nCódigo de Barras: "+getCodigoBarras()+"\nValor: "+getValor();
+                +"\nCódigo de Barras: "+getCodigoBarras()+"\nValor: R$"+getValor();
     }
 }

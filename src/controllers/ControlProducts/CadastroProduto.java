@@ -1,7 +1,5 @@
 package controllers.ControlProducts;
 
-import model.ModelPerson.Cliente;
-import model.ModelPerson.Funcionario;
 import model.ModelProducts.Medicamento;
 import model.ModelProducts.MedicamentoControlado;
 import model.ModelProducts.MedicamentoInjetavel;
@@ -12,13 +10,8 @@ import java.util.ArrayList;
 
 
 public class CadastroProduto {
-    private static ArrayList<Produto> listaTodosProdutos = new ArrayList<>();
-    private static ArrayList<Produto> listaProdutosNormais = new ArrayList<>();
-    private static ArrayList<Medicamento> listaMedicamentos = new ArrayList<>();
-    private static ArrayList<MedicamentoControlado> listaMedicamentosControlados = new ArrayList<>();
-    private static ArrayList<MedicamentoInjetavel> listaMedicamentosInjetaveis = new ArrayList<>();
 
-    public void menuEscolhaTipoProduto(){
+    public static void menuEscolhaTipoProduto(){
         boolean travaTela = true;
 
         do{
@@ -44,23 +37,23 @@ public class CadastroProduto {
     }
     private static void cadastrarProdutoNormal(){
         Produto produto = new Produto();
-        UtilProducts.setarDadosProduto(produto);
-        listaProdutosNormais.add(produto);
+        ControleProdutos.setarDadosProduto(produto);
+        ControleProdutos.listaProdutosNormais.add(produto);
     }
     private static void cadastrarMedicamento(){
         Medicamento med = new Medicamento();
-        UtilProducts.setarDadosMedicamento(med);
-        listaMedicamentos.add(med);
+        ControleProdutos.setarDadosMedicamento(med);
+        ControleProdutos.listaMedicamentos.add(med);
     }
     private static void cadastrarMedicamentoControlado(){
         MedicamentoControlado medCon = new MedicamentoControlado();
-        UtilProducts.setarDadosMedicamentoControlado(medCon);
-        listaMedicamentosControlados.add(medCon);
+        ControleProdutos.setarDadosMedicamentoControlado(medCon);
+        ControleProdutos.listaMedicamentosControlados.add(medCon);
     }
     private static void cadastrarMedicamentoInjetavel(){
         MedicamentoInjetavel medInj = new MedicamentoInjetavel();
-        UtilProducts.setarDadosMedicamentoInjetavel(medInj);
-        listaMedicamentosInjetaveis.add(medInj);
+        ControleProdutos.setarDadosMedicamentoInjetavel(medInj);
+        ControleProdutos.listaMedicamentosInjetaveis.add(medInj);
     }
 
 

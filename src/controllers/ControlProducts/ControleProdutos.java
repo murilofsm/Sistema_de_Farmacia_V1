@@ -6,7 +6,14 @@ import model.ModelProducts.MedicamentoInjetavel;
 import model.ModelProducts.Produto;
 import util.Input;
 
-class UtilProducts {
+import java.util.ArrayList;
+
+class ControleProdutos {
+    protected static ArrayList<Produto> listaTodosProdutos = new ArrayList<>();
+    protected static ArrayList<Produto> listaProdutosNormais = new ArrayList<>();
+    protected static ArrayList<Medicamento> listaMedicamentos = new ArrayList<>();
+    protected static ArrayList<MedicamentoControlado> listaMedicamentosControlados = new ArrayList<>();
+    protected static ArrayList<MedicamentoInjetavel> listaMedicamentosInjetaveis = new ArrayList<>();
 
     protected static void setarDadosProduto(Produto produto){
         System.out.print("Insira o código: ");
