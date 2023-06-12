@@ -3,10 +3,8 @@ package controllers.ControlProducts;
 import util.Input;
 public class ImprimirProdutos {
 
-    public static void menuImprimirProdutos(){
-
+    protected static void menuImprimirProdutos(){
         boolean travaTela = true;
-
         do{
             System.out.println("=============Menu Impressão==============");
             System.out.println("| 1 - Imprimir Produtos Normais         |");
@@ -28,30 +26,31 @@ public class ImprimirProdutos {
                 default -> System.out.println("Opção incorreta, tente novamente.");
             }
         }while(travaTela);
-
     }
-
     private static void imprimirProdutosNormais(){
+        System.out.println("Produtos Normais: \n");
         for(int i=0; i < ControleProdutos.listaProdutosNormais.size(); i++){
             System.out.println(ControleProdutos.listaProdutosNormais.get(i).exibirDadosProduto());
         }
     }
     private static void imprimirMedicamentos(){
+        System.out.println("Medicamentos Normais: \n");
         for(int i=0; i < ControleProdutos.listaMedicamentos.size(); i++){
             System.out.println(ControleProdutos.listaMedicamentos.get(i).exibirDadosProduto());
         }
     }
     private static void imprimirMedicamentosControlados(){
+        System.out.println("Medicamentos Controlados: \n");
         for(int i=0; i < ControleProdutos.listaMedicamentosControlados.size(); i++){
             System.out.println(ControleProdutos.listaMedicamentosControlados.get(i).exibirDadosProduto());
         }
     }
     private static void imprimirMedicamentosInjetaveis(){
+        System.out.println("Medicamentos Injetáveis: \n");
         for(int i=0; i < ControleProdutos.listaMedicamentosInjetaveis.size(); i++){
             System.out.println(ControleProdutos.listaMedicamentosInjetaveis.get(i).exibirDadosProduto());
         }
     }
-
     private static void imprimirTodos() {
         imprimirProdutosNormais();
         imprimirMedicamentos();

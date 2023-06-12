@@ -16,15 +16,7 @@ public class Venda {
     private double valorTotal;
     private static ArrayList<ItemVenda> itens = new ArrayList<>();
 
-    public Venda(int codigo, Funcionario funcionario, Cliente cliente, LocalDate data, double valorProdutos, double desconto, double valorTotal) {
-        this.codigo = codigo;
-        this.funcionario = funcionario;
-        this.cliente = cliente;
-        this.data = data;
-        this.valorProdutos = valorProdutos;
-        this.desconto = desconto;
-        this.valorTotal = valorTotal;
-    }
+    public Venda(){}
 
     public int getCodigo() {
         return codigo;
@@ -90,16 +82,21 @@ public class Venda {
         Venda.itens = itens;
     }
 
-    @Override
-    public String toString() {
-        return "Venda{" +
-                "codigo=" + codigo +
-                ", funcionario=" + funcionario +
-                ", cliente=" + cliente +
-                ", data=" + data +
-                ", valorProdutos=" + valorProdutos +
-                ", desconto=" + desconto +
-                ", valorTotal=" + valorTotal +
-                '}';
+    public String exibirDadosVendaAdmin() {
+        return  "\nCódigo Venda: " + getCodigo() +
+                "\nFuncionario: " + getFuncionario() +
+                "\nNome Cliente: " + getCliente().getNome() +
+                "\nData: " + getData() +
+                "\nValor dos produtos: " + getValorProdutos() +
+                "\nDesconto: " + getDesconto() +
+                "\nValor total da Compra: " + getValorTotal();
+    }
+    public String exibirDadosVenda() {
+        return  "\nCódigo Venda: " + getCodigo() +
+                "\nNome Cliente: " + getCliente().getNome() +
+                "\nData: " + getData() +
+                "\nValor dos produtos: " + getValorProdutos() +
+                "\nDesconto: " + getDesconto() +
+                "\nValor total da Compra: " + getValorTotal();
     }
 }

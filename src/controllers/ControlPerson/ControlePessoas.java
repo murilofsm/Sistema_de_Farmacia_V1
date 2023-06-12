@@ -4,43 +4,121 @@ import model.ModelPerson.Cliente;
 import model.ModelPerson.Funcionario;
 import model.ModelPerson.Pessoa;
 import util.Input;
-
 import java.util.ArrayList;
 
 public class ControlePessoas {
     protected static ArrayList<Cliente> listaClientes = new ArrayList<>();
     protected static ArrayList<Funcionario> listaFuncionarios = new ArrayList<>();
+    public static void menuControlePessoa(){
+        boolean travaTela = true;
 
-    // arquivo utilizado para controle e funções uteis além de armazenar as listas, já que não estamos utilizando banco
+        do{
+            System.out.println("======Menu Controle Pessoa======");
+            System.out.println("| 1 - Menu Cadastrar Cli/Func  |");
+            System.out.println("| 2 - Buscar/listar            |");
+            System.out.println("| 0 - Voltar                   |");
+            System.out.println("================================");
+            System.out.print("Resposta: ");
+            int op = Input.nextInt();
+            switch (op){
+                case 1 -> CadastrosPessoa.menuCadastroPessoa();
+                case 2 -> ImprimirPessoas.menuImprimirPessoa();
+                case 0 -> travaTela = false;
+                default -> System.out.println("Opção incorreta, tente novamente.");
+            }
+        }while(travaTela);
+    }
+
     private static void setarDadosPessoa(Pessoa p){
-        System.out.println("Insira o código: ");
-        p.setCodigo(Input.nextInt());
-        System.out.println("Insira o nome: ");
+        System.out.print("Insira o nome: ");
         p.setNome(Input.nextLine());
-        System.out.println("Insira o cpf: ");
+        System.out.print("Insira o cpf: ");
         p.setCpf(Input.nextLine());
-        System.out.println("Insira a data de nascimento: ");
+        System.out.print("Insira a data de nascimento: ");
         p.setDataNascimento(Input.nextLocalDate());
     }
 
     protected static void setarDadosCliente(Cliente cli){
         setarDadosPessoa(cli);
-        System.out.println("Insira o email:");
+        int cod;
+        System.out.print("Insira o email:");
         cli.setEmail(Input.nextLine());
+        cod = geradorCodigo("cliente");
+        cli.setCodigo(cod);
     }
     protected static void setarDadosFuncionario(Funcionario fun){
         setarDadosPessoa(fun);
-        System.out.println("Insira o ctps: ");
+        int cod;
+        System.out.print("Insira o CTPS: ");
         fun.setCtps(Input.nextLine());
+        cod = geradorCodigo("funcionario");
+        fun.setCodigo(cod);
     }
-    protected static void imprimirListaCliente(){
+
+    private static int geradorCodigo(String tipo){
+        int cod = 1;
+
+            if(tipo.equals("cliente")){
+                while(autenticadorCodigoCliente(cod)){
+                    cod++;
+                    autenticadorCodigoCliente(cod);
+                }
+            }
+            if(tipo.equals("funcionario")){
+                while(autenticadorCodigoFuncionario(cod)){
+                    cod++;
+                    autenticadorCodigoFuncionario(cod);
+                }
+            }
+
+        return cod;
+    }
+    private static boolean autenticadorCodigoCliente(int cod){
+
+        if(listaClientes.size() == 0){
+            return false;
+        }
         for (Cliente listaCliente : listaClientes) {
-            System.out.println(listaCliente.exibirDadosCliente());
+            if (listaCliente.getCodigo() == cod) {
+                return true;
+            }
         }
+        return false;
     }
-    protected static void imprimirListaFuncionario(){
-        for(Funcionario listaFuncionario : listaFuncionarios){
-            System.out.println(listaFuncionario.exibirDadosFuncionario());
+
+    private static boolean autenticadorCodigoFuncionario(int cod){
+
+        if(listaFuncionarios.size() == 0){
+            return false;
         }
+
+        for (Funcionario listaFuncionario : listaFuncionarios) {
+            if (listaFuncionario.getCodigo() == cod) {
+                return true;
+            }
+        }
+        return false;
     }
+
+
+
+    public static Funcionario autenticadorFuncionario(String ctps){
+        for (Funcionario listaFuncionario : listaFuncionarios) {
+            if (listaFuncionario.getCtps().equals(ctps)) {
+                return listaFuncionario;
+            }
+        }
+        System.err.println("\nFuncionario não encontrado, digite novamente\n");
+        return null;
+    }
+    public static Cliente autenticadorCliente(String ctps){
+        for (Cliente listaCliente : listaClientes) {
+            if (listaCliente.getEmail().equals(ctps)) {
+                return listaCliente;
+            }
+        }
+        System.err.println("\nCliente não encontrado, digite novamente\n");
+        return null;
+    }
+
 }

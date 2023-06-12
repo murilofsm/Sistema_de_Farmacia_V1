@@ -53,6 +53,9 @@ public class Pessoa {
 
 
     public String exibirDadosPessoa () {
-        return "\nCódigo: "+getCodigo()+"\nNome: "+getNome()+"\nCPF:"+getCpf()+"\nData de Nascimento: "+getDataNascimento();
+        return "\nCódigo: " + getCodigo() +
+                "\nNome: " + getNome() +
+                "\nCPF:" + getCpf() +
+                "\nData de Nascimento: " + getDataNascimento();
     }
 }

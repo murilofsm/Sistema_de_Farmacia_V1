@@ -4,11 +4,9 @@ import model.ModelPerson.Cliente;
 import model.ModelPerson.Funcionario;
 import util.Input;
 
-import java.util.ArrayList;
-
 public class ImprimirPessoas {
 
-    public static void menuImprimirPessoa(){
+    protected static void menuImprimirPessoa(){
 
         boolean travaTela = true;
 
@@ -24,9 +22,9 @@ public class ImprimirPessoas {
             int op = Input.nextInt();
             switch (op){
                 case 1 -> buscarCliente();
-                case 2 -> ControlePessoas.imprimirListaCliente();
+                case 2 -> imprimirListaCliente();
                 case 3 -> buscarFuncionario();
-                case 4 -> ControlePessoas.imprimirListaFuncionario();
+                case 4 -> imprimirListaFuncionario();
                 case 0 -> travaTela = false;
                 default -> System.out.println("Opção incorreta, tente novamente.");
             }
@@ -61,5 +59,15 @@ public class ImprimirPessoas {
        }catch(Exception ex){
            System.out.println("Funcionário não encontrado");
        }
+    }
+    protected static void imprimirListaCliente(){
+        for (int i = 0; i < ControlePessoas.listaClientes.size(); i++) {
+            System.out.println(ControlePessoas.listaClientes.get(i).exibirDadosCliente());
+        }
+    }
+    protected static void imprimirListaFuncionario(){
+        for (int i = 0; i < ControlePessoas.listaFuncionarios.size(); i++) {
+            System.out.println(ControlePessoas.listaFuncionarios.get(i).exibirDadosFuncionario());
+        }
     }
 }

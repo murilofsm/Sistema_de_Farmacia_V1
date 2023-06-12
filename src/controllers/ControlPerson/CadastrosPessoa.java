@@ -4,12 +4,10 @@ import model.ModelPerson.Cliente;
 import model.ModelPerson.Funcionario;
 import util.Input;
 
-import java.util.ArrayList;
 
 public class CadastrosPessoa {
-    private static ArrayList<Cliente> listaClientes = new ArrayList<>();
-    private static ArrayList<Funcionario> listaFuncionarios = new ArrayList<>();
-    public static void menuCadastroPessoa(){
+
+    protected static void menuCadastroPessoa(){
         boolean travaTela = true;
 
         do{
@@ -32,12 +30,12 @@ public class CadastrosPessoa {
     private static void cadastrarCliente(){
         Cliente cli = new Cliente();
         ControlePessoas.setarDadosCliente(cli);
-        listaClientes.add(cli);
+        ControlePessoas.listaClientes.add(cli);
     }
 
     private static void cadastrarFuncionario(){
         Funcionario fun = new Funcionario();
         ControlePessoas.setarDadosFuncionario(fun);
-        listaFuncionarios.add(fun);
+        ControlePessoas.listaFuncionarios.add(fun);
     }
 }

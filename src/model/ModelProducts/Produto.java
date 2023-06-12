@@ -13,18 +13,8 @@ public class Produto {
     private String codigoBarras;
     private double valor;
 
-    public Produto() {
-    }
 
-    public Produto(int codigo, String descricao, String marca, String lote, LocalDate dataFabricacao, LocalDate dataVencimento, String codigoBarras, double valor) {
-        this.codigo = codigo;
-        this.descricao = descricao;
-        this.marca = marca;
-        this.lote = lote;
-        this.dataFabricacao = dataFabricacao;
-        this.dataVencimento = dataVencimento;
-        this.codigoBarras = codigoBarras;
-        this.valor = valor;
+    public Produto() {
     }
 
     public int getCodigo() {
@@ -92,8 +82,13 @@ public class Produto {
     }
 
     public String exibirDadosProduto() {
-        return "\nCodigo: "+getCodigo()+"\nDescrição: "+getDescricao()+"\nMarca: "+getMarca()+"\nLote: "+getLote()
-                +"\nData de Fabricacao: "+getDataFabricacao()+"\nData de Vencimento: "+getDataVencimento()
-                +"\nCódigo de Barras: "+getCodigoBarras()+"\nValor: R$"+getValor();
+        return "\nCodigo: " + getCodigo() +
+                "\nDescrição: " + getDescricao() +
+                "\nMarca: " + getMarca() +
+                "\nLote: " + getLote() +
+                "\nData de Fabricacao: " + getDataFabricacao() +
+                "\nData de Vencimento: " + getDataVencimento() +
+                "\nCódigo de Barras: " + getCodigoBarras() +
+                "\nValor: R$" + getValor();
     }
 }

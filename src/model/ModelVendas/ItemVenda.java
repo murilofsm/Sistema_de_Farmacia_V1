@@ -8,20 +8,45 @@ public class ItemVenda {
     private double valorUnidade;
     private double valorTotal;
 
-    public ItemVenda(Produto produto, int quantidade, double valorUnidade, double valorTotal) {
+    public ItemVenda(){}
+
+
+    public Produto getProduto() {
+        return produto;
+    }
+
+    public void setProduto(Produto produto) {
         this.produto = produto;
+    }
+
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
+    }
+
+    public double getValorUnidade() {
+        return valorUnidade;
+    }
+
+    public void setValorUnidade(double valorUnidade) {
         this.valorUnidade = valorUnidade;
+    }
+
+    public double getValorTotal() {
+        return valorTotal;
+    }
+
+    public void setValorTotal(double valorTotal) {
         this.valorTotal = valorTotal;
     }
 
-    @Override
-    public String toString() {
-        return "ItemVenda{" +
-                "produto=" + produto +
-                ", quantidade=" + quantidade +
-                ", valorUnidade=" + valorUnidade +
-                ", valorTotal=" + valorTotal +
-                '}';
+    public String exibirDadosItenVenda() {
+        return "\nProduto: " + getProduto().getCodigo() +
+                "\nQuantidade: " + getQuantidade() +
+                "\nValor Unidade: " + getValorUnidade() +
+                "\nValor Total: " + getValorTotal();
     }
 }

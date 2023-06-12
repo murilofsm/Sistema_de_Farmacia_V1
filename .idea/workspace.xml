@@ -4,19 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c8a49ba-a5a2-456a-a841-db246be70554" name="Changes" comment="Adicionado cadastros e parte de imprimir no console os dados dos produtos e das pessoas">
-      <change afterPath="$PROJECT_DIR$/src/controllers/ControlPerson/ControlePessoas.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controllers/ControlPerson/ImprimirPessoas.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controllers/ControlProducts/ImprimirProdutos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="1c8a49ba-a5a2-456a-a841-db246be70554" name="Changes" comment="muita coisa adicionada, implementando venda...">
+      <change afterPath="$PROJECT_DIR$/src/controllers/ControlVendas/ControleItensVenda.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controllers/ControlVendas/ControleVenda.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/ControlPerson/CadastrosPessoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ControlPerson/CadastrosPessoa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/ControlPerson/utilPerson.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/ControlPerson/ControlePessoas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ControlPerson/ControlePessoas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/ControlPerson/ImprimirPessoas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ControlPerson/ImprimirPessoas.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/ControlProducts/CadastroProduto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ControlProducts/CadastroProduto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/ControlProducts/UtilProducts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ControlProducts/ControleProdutos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/ControlProducts/ControleProdutos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ControlProducts/ControleProdutos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/ControlProducts/ImprimirProdutos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ControlProducts/ImprimirProdutos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ModelPerson/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ModelPerson/Cliente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/ModelPerson/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ModelPerson/Funcionario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ModelPerson/Pessoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ModelPerson/Pessoa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ModelProducts/Medicamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ModelProducts/Medicamento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ModelProducts/MedicamentoControlado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ModelProducts/MedicamentoControlado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ModelProducts/MedicamentoInjetavel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ModelProducts/MedicamentoInjetavel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/ModelProducts/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ModelProducts/Produto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ModelVendas/ItemVenda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ModelVendas/ItemVenda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ModelVendas/Venda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ModelVendas/Venda.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,13 +105,48 @@
       <option name="project" value="LOCAL" />
       <updated>1685661688125</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Adicionado impressão dos produtos">
+      <created>1686153631766</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1686153631767</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Novas atualizações, ainda não está completo" />
     <MESSAGE value="Realizado algumas alterações no produto" />
     <MESSAGE value="Adicionado cadastros e parte de imprimir no console os dados dos produtos e das pessoas" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adicionado cadastros e parte de imprimir no console os dados dos produtos e das pessoas" />
+    <MESSAGE value="Adicionado impressão dos produtos" />
+    <MESSAGE value="muita coisa adicionada, implementando venda..." />
+    <option name="LAST_COMMIT_MESSAGE" value="muita coisa adicionada, implementando venda..." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/model/ModelProducts/MedicamentoControlado.java</url>
+          <line>10</line>
+          <properties class="model.ModelProducts.MedicamentoControlado" method="exibirDadosMedicamentoControlado">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

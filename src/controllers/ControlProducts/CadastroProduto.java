@@ -5,13 +5,9 @@ import model.ModelProducts.MedicamentoControlado;
 import model.ModelProducts.MedicamentoInjetavel;
 import model.ModelProducts.Produto;
 import util.Input;
-
-import java.util.ArrayList;
-
-
 public class CadastroProduto {
 
-    public static void menuEscolhaTipoProduto(){
+    protected static void menuEscolhaTipoProduto(){
         boolean travaTela = true;
 
         do{
@@ -47,14 +43,12 @@ public class CadastroProduto {
     }
     private static void cadastrarMedicamentoControlado(){
         MedicamentoControlado medCon = new MedicamentoControlado();
-        ControleProdutos.setarDadosMedicamentoControlado(medCon);
+        ControleProdutos.setarDadosMedicamento(medCon);
         ControleProdutos.listaMedicamentosControlados.add(medCon);
     }
     private static void cadastrarMedicamentoInjetavel(){
         MedicamentoInjetavel medInj = new MedicamentoInjetavel();
-        ControleProdutos.setarDadosMedicamentoInjetavel(medInj);
+        ControleProdutos.setarDadosMedicamento(medInj);
         ControleProdutos.listaMedicamentosInjetaveis.add(medInj);
     }
-
-
 }

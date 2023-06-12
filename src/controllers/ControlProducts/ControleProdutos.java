@@ -8,12 +8,41 @@ import util.Input;
 
 import java.util.ArrayList;
 
-class ControleProdutos {
-    protected static ArrayList<Produto> listaTodosProdutos = new ArrayList<>();
-    protected static ArrayList<Produto> listaProdutosNormais = new ArrayList<>();
-    protected static ArrayList<Medicamento> listaMedicamentos = new ArrayList<>();
-    protected static ArrayList<MedicamentoControlado> listaMedicamentosControlados = new ArrayList<>();
-    protected static ArrayList<MedicamentoInjetavel> listaMedicamentosInjetaveis = new ArrayList<>();
+public class ControleProdutos {
+    public static ArrayList<Produto> listaTodosProdutos = new ArrayList<>();
+    public static ArrayList<Produto> listaProdutosNormais = new ArrayList<>();
+    public static ArrayList<Medicamento> listaMedicamentos = new ArrayList<>();
+    public static ArrayList<MedicamentoControlado> listaMedicamentosControlados = new ArrayList<>();
+    public static ArrayList<MedicamentoInjetavel> listaMedicamentosInjetaveis = new ArrayList<>();
+
+    public static void menuControleProduto(){
+        boolean travaTela = true;
+
+        do{
+            System.out.println("======Menu Controle Pessoa======");
+            System.out.println("| 1 - Cadastrar                |");
+            System.out.println("| 2 - Buscar/listar            |");
+            System.out.println("| 0 - Voltar                   |");
+            System.out.println("================================");
+            System.out.print("Resposta: ");
+            int op = Input.nextInt();
+            switch (op){
+                case 1 -> CadastroProduto.menuEscolhaTipoProduto();
+                case 2 -> ImprimirProdutos.menuImprimirProdutos();
+                case 0 -> travaTela = false;
+                default -> System.out.println("Opção incorreta, tente novamente.");
+            }
+        }while(travaTela);
+    }
+
+    public static Produto buscarProduto(int codigoProduto){
+        for (int i = 0; i < listaTodosProdutos.size(); i++) {
+            if(listaTodosProdutos.get(i).getCodigo() == (codigoProduto)){
+                return listaTodosProdutos.get(i);
+            }
+        }
+        return null;
+    }
 
     protected static void setarDadosProduto(Produto produto){
         System.out.print("Insira o código: ");
@@ -32,6 +61,7 @@ class ControleProdutos {
         produto.setCodigoBarras(Input.nextLine());
         System.out.print("Insira o valor: ");
         produto.setValor(Input.nextDouble());
+
     }
 
     protected static void setarDadosMedicamento(Medicamento medicamento){
@@ -42,19 +72,5 @@ class ControleProdutos {
         medicamento.setComposicao(Input.nextLine());
         System.out.print("Insira a dosagem: ");
         medicamento.setDosagem(Input.nextDouble());
-    }
-    protected static void setarDadosMedicamentoControlado(MedicamentoControlado medicamentoControlado){
-        setarDadosMedicamento(medicamentoControlado);
-        System.out.print("Insira o CRM do médico: ");
-        medicamentoControlado.setCrmMedico(Input.nextLine());
-        System.out.print("Insira o CPF do Paciente: ");
-        medicamentoControlado.setCpfPaciente(Input.nextLine());
-    }
-    protected static void setarDadosMedicamentoInjetavel(MedicamentoInjetavel medicamentoInjetavel){
-        setarDadosMedicamento(medicamentoInjetavel);
-        System.out.print("Insira o funcionario responsável: ");
-        medicamentoInjetavel.setFuncionarioResponsavel(Input.nextLine());
-        System.out.print("Insira o CPF do Paciente: ");
-        medicamentoInjetavel.setCpfPaciente(Input.nextLine());
     }
 }
