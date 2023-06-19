@@ -14,7 +14,7 @@ public class Venda {
     private double valorProdutos;
     private double desconto;
     private double valorTotal;
-    private static ArrayList<ItemVenda> itens = new ArrayList<>();
+    private ArrayList<ItemVenda> itens = new ArrayList<>();
 
     public Venda(){}
 
@@ -74,29 +74,35 @@ public class Venda {
         this.valorTotal = valorTotal;
     }
 
-    public static ArrayList<ItemVenda> getItens() {
+    public ArrayList<ItemVenda> getItens() {
         return itens;
     }
 
-    public static void setItens(ArrayList<ItemVenda> itens) {
-        Venda.itens = itens;
-    }
-
-    public String exibirDadosVendaAdmin() {
-        return  "\nCódigo Venda: " + getCodigo() +
-                "\nFuncionario: " + getFuncionario() +
-                "\nNome Cliente: " + getCliente().getNome() +
-                "\nData: " + getData() +
-                "\nValor dos produtos: " + getValorProdutos() +
-                "\nDesconto: " + getDesconto() +
-                "\nValor total da Compra: " + getValorTotal();
+    public void setItens(ArrayList<ItemVenda> itens) {
+        this.itens = itens;
     }
     public String exibirDadosVenda() {
         return  "\nCódigo Venda: " + getCodigo() +
-                "\nNome Cliente: " + getCliente().getNome() +
-                "\nData: " + getData() +
-                "\nValor dos produtos: " + getValorProdutos() +
-                "\nDesconto: " + getDesconto() +
-                "\nValor total da Compra: " + getValorTotal();
+                "  Nome Cliente: " + getCliente().getNome() +
+                "  Data: " + getData() +
+                "  Quantidade Produtos: " + getItens().size() +
+                "  Valor dos produtos: " + getValorProdutos() +
+                "  Desconto Total: " + getDesconto() +
+                "  Valor total da Venda: " + getValorTotal();
     }
+
+    public String exibirDadosVendaBusca() {
+        return  "\nCódigo Venda: " + getCodigo() +
+                "  Nome Cliente: " + getCliente().getNome() +
+                "  Data: " + getData() +
+                "  Valor dos produtos: " + getValorProdutos() +
+                "  Desconto Total: " + getDesconto() +
+                "  Valor total da Venda: " + getValorTotal()
+
+                ;
+
+
+    }
+
+
 }

@@ -17,6 +17,9 @@ public class Produto {
     public Produto() {
     }
 
+    public double desconto(double valor){
+        return (valor * 0.05);
+    }
     public int getCodigo() {
         return codigo;
     }

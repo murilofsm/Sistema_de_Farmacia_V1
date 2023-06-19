@@ -27,6 +27,7 @@ public class ImprimirProdutos {
             }
         }while(travaTela);
     }
+
     private static void imprimirProdutosNormais(){
         System.out.println("Produtos Normais: \n");
         for(int i=0; i < ControleProdutos.listaProdutosNormais.size(); i++){

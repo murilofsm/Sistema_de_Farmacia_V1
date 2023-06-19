@@ -100,20 +100,18 @@ public class ControlePessoas {
         return false;
     }
 
-
-
-    public static Funcionario autenticadorFuncionario(String ctps){
-        for (Funcionario listaFuncionario : listaFuncionarios) {
-            if (listaFuncionario.getCtps().equals(ctps)) {
-                return listaFuncionario;
+    public static Funcionario autenticadorFuncionario(int codFuncionario){
+        for (int i = 0; i < listaFuncionarios.size(); i++) {
+            if (listaFuncionarios.get(i).getCodigo() == codFuncionario) {
+                return listaFuncionarios.get(i);
             }
         }
         System.err.println("\nFuncionario não encontrado, digite novamente\n");
         return null;
     }
-    public static Cliente autenticadorCliente(String ctps){
+    public static Cliente autenticadorCliente(int codCliente){
         for (Cliente listaCliente : listaClientes) {
-            if (listaCliente.getEmail().equals(ctps)) {
+            if (listaCliente.getCodigo() == codCliente) {
                 return listaCliente;
             }
         }

@@ -7,9 +7,9 @@ import model.ModelProducts.Produto;
 import util.Input;
 public class CadastroProduto {
 
+    
     protected static void menuEscolhaTipoProduto(){
         boolean travaTela = true;
-
         do{
             System.out.println(" =========Escolha o tipo=========");
             System.out.println(" | 1 - Produto normal           |");
@@ -28,27 +28,30 @@ public class CadastroProduto {
                 case 0 -> travaTela = false;
                 default -> System.out.println("Opção incorreta, tente novamente.");
             }
-
         }while(travaTela);
     }
     private static void cadastrarProdutoNormal(){
         Produto produto = new Produto();
         ControleProdutos.setarDadosProduto(produto);
+        ControleProdutos.listaTodosProdutos.add(produto);
         ControleProdutos.listaProdutosNormais.add(produto);
     }
     private static void cadastrarMedicamento(){
         Medicamento med = new Medicamento();
         ControleProdutos.setarDadosMedicamento(med);
+        ControleProdutos.listaTodosProdutos.add(med);
         ControleProdutos.listaMedicamentos.add(med);
     }
     private static void cadastrarMedicamentoControlado(){
         MedicamentoControlado medCon = new MedicamentoControlado();
         ControleProdutos.setarDadosMedicamento(medCon);
+        ControleProdutos.listaTodosProdutos.add(medCon);
         ControleProdutos.listaMedicamentosControlados.add(medCon);
     }
     private static void cadastrarMedicamentoInjetavel(){
         MedicamentoInjetavel medInj = new MedicamentoInjetavel();
         ControleProdutos.setarDadosMedicamento(medInj);
+        ControleProdutos.listaTodosProdutos.add(medInj);
         ControleProdutos.listaMedicamentosInjetaveis.add(medInj);
     }
 }

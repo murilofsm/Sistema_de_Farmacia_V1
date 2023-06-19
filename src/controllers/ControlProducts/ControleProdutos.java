@@ -1,5 +1,6 @@
 package controllers.ControlProducts;
 
+import model.ModelPerson.Cliente;
 import model.ModelProducts.Medicamento;
 import model.ModelProducts.MedicamentoControlado;
 import model.ModelProducts.MedicamentoInjetavel;
@@ -10,6 +11,7 @@ import java.util.ArrayList;
 
 public class ControleProdutos {
     public static ArrayList<Produto> listaTodosProdutos = new ArrayList<>();
+
     public static ArrayList<Produto> listaProdutosNormais = new ArrayList<>();
     public static ArrayList<Medicamento> listaMedicamentos = new ArrayList<>();
     public static ArrayList<MedicamentoControlado> listaMedicamentosControlados = new ArrayList<>();
@@ -19,7 +21,7 @@ public class ControleProdutos {
         boolean travaTela = true;
 
         do{
-            System.out.println("======Menu Controle Pessoa======");
+            System.out.println("======Menu Controle Produtos======");
             System.out.println("| 1 - Cadastrar                |");
             System.out.println("| 2 - Buscar/listar            |");
             System.out.println("| 0 - Voltar                   |");
@@ -45,8 +47,7 @@ public class ControleProdutos {
     }
 
     protected static void setarDadosProduto(Produto produto){
-        System.out.print("Insira o código: ");
-        produto.setCodigo(Input.nextInt());
+        produto.setCodigo(gerarCodProduto());
         System.out.print("Insira a descrição: ");
         produto.setDescricao(Input.nextLine());
         System.out.print("Insira a marca: ");
@@ -72,5 +73,27 @@ public class ControleProdutos {
         medicamento.setComposicao(Input.nextLine());
         System.out.print("Insira a dosagem: ");
         medicamento.setDosagem(Input.nextDouble());
+    }
+
+    protected static int gerarCodProduto(){
+        int cod = 1;
+        while(autenticadorCodigoProduto(cod)){
+            cod++;
+            autenticadorCodigoProduto(cod);
+        }
+        return cod;
+    }
+
+    private static boolean autenticadorCodigoProduto(int cod){
+
+        if(listaTodosProdutos.size() == 0){
+            return false;
+        }
+        for (Produto listaProd : listaTodosProdutos) {
+            if (listaProd.getCodigo() == cod) {
+                return true;
+            }
+        }
+        return false;
     }
 }

@@ -7,6 +7,9 @@ public class Medicamento extends Produto{
     public Medicamento() {
 
     }
+    public double desconto(double valor){
+        return valor * 0.10;
+    }
     public int getNumRegistro() {
         return numRegistro;
     }

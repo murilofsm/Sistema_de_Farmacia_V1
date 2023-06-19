@@ -44,7 +44,7 @@ public class ItemVenda {
     }
 
     public String exibirDadosItenVenda() {
-        return "\nProduto: " + getProduto().getCodigo() +
+        return "\nProduto: " + getProduto().getDescricao() +
                 "\nQuantidade: " + getQuantidade() +
                 "\nValor Unidade: " + getValorUnidade() +
                 "\nValor Total: " + getValorTotal();
