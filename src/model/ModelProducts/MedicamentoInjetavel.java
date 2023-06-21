@@ -6,7 +6,7 @@ public class MedicamentoInjetavel extends Medicamento{
 
     }
     public double desconto(double valor){
-        return (valor * 0.05);
+        return valor * 0;
     }
     public String exibirDadosMedicamentoInjetavel() {
         return exibirDadosMedicamento();

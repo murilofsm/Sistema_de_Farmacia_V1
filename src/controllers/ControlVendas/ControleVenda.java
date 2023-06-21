@@ -24,9 +24,6 @@ public class ControleVenda {
     6 - desconto, soma total dos descontos
     7 - valorTotal, soma total de todos os produtos com desconto
     8 - carrinho// já feito
-
-
-
      */
 
 
@@ -39,7 +36,7 @@ public class ControleVenda {
               System.out.println(" | 1 - Listar Vendas      |");
               System.out.println(" | 2 - Buscar Venda       |");
               System.out.println(" | 0 - Voltar             |");
-              System.out.println("=================================");
+              System.out.println("===========================");
               System.out.print("Resposta: ");
               int op = Input.nextInt();
               switch (op){
@@ -51,8 +48,6 @@ public class ControleVenda {
 
           }while(travaTela);
       }
-
-
 
     public static void iniciarVenda(ArrayList<ItemVenda> carrinhoDeProdutos){
         Venda venda = new Venda();
@@ -71,7 +66,7 @@ public class ControleVenda {
 
         boolean travaCli = true;
         do{
-            System.out.println("Insira o id do Cliente: ");
+            System.out.print("Insira o id do Cliente: ");
             cod = Input.nextInt();
             if(ControlePessoas.autenticadorCliente(cod) != null){
                 venda.setCliente(ControlePessoas.autenticadorCliente(cod));
@@ -84,45 +79,43 @@ public class ControleVenda {
         venda.setValorProdutos(somaValorProdutos(carrinhoDeProdutos));
         venda.setDesconto(calculaDesconto(carrinhoDeProdutos,calculoIdade(venda.getCliente().getDataNascimento())));
         venda.setValorTotal(venda.getValorProdutos() - venda.getDesconto());
+
         venda.setItens(carrinhoDeProdutos);
         listaDeVendas.add(venda);
-        System.out.println("Venda realizada com sucesso !!");
+        System.out.println("\nVenda realizada com sucesso !!\n");
     }
 
     private static void buscarVenda(){
-        System.out.print("Insira o código da venda que deseja buscar: ");
-        int codBusca = Input.nextInt();
-        for (int i = 0; i < listaDeVendas.size(); i++) {
-            if(listaDeVendas.get(i).getCodigo() == codBusca){
-                System.out.println(listaDeVendas.get(i).exibirDadosVendaBusca());
-                imprimirListaBuscaProdutos();
-                return;
+            if(listaDeVendas.size() > 0){
+                System.out.println("\n Não há itens.\n");
+
+            }else{
+                ArrayList<ItemVenda> itensVendas = null;
+                System.out.print("Insira o código da venda que deseja buscar: ");
+                int codBusca = Input.nextInt();
+                if(autenticadorCodigoVenda(codBusca)){
+                    for (Venda listaDeVenda : listaDeVendas) {
+                        if (listaDeVenda.getCodigo() == codBusca) {
+                            System.out.println(listaDeVenda.exibirDadosVendaBusca());
+                            itensVendas = listaDeVenda.getItens();
+                        }
+                    }
+                    assert itensVendas != null;
+                    for (ItemVenda itensVenda : itensVendas) {
+                        System.out.println(itensVenda.exibirDadosItemVenda());
+                    }
+                }else{
+                    System.out.println("\nVenda não encontrada.\n");
+                }
             }
-        }
-        System.out.println("Venda não encontrada. Por favor tente novamente !!");
     }
-
-
-
-    public static void imprimirListaBuscaProdutos(){
-        System.out.println("Lista de Produtos: ");
-        for(int i = 0; i < listaDeVendas.get(i).getItens().size(); i++){
-            System.out.println(
-                    "\n Descrição do Produto: " + listaDeVendas.get(i).getItens().get(i).getProduto().getDescricao() +
-                            "\n Quantidade: " + listaDeVendas.get(i).getItens().get(i).getQuantidade() +
-                            "\n Valor unitário: " + listaDeVendas.get(i).getItens().get(i).getValorUnidade() +
-                            "\n Valor Total: " + listaDeVendas.get(i).getItens().get(i).getValorTotal());
-        }
-    }
-
 
 
 
 
     private static int calculoIdade(LocalDate dataNascimento){
         LocalDate dataAtual = LocalDate.now();
-        Period periodo = Period.between(dataNascimento, dataAtual);
-        return periodo.getYears();
+        return Period.between(dataNascimento, dataAtual).getYears();
     }
 
 
@@ -137,33 +130,26 @@ public class ControleVenda {
             }
             if (carrinhoDeProduto.getProduto() instanceof Medicamento) {
                 somaDesconto += carrinhoDeProduto.getProduto().desconto(((Medicamento) carrinhoDeProduto.getProduto()).getValor());
-                if (carrinhoDeProduto.getProduto() instanceof MedicamentoControlado) {
-                    somaDesconto += carrinhoDeProduto.getProduto().desconto(((MedicamentoControlado) carrinhoDeProduto.getProduto()).getValor());
-                }
-                if (carrinhoDeProduto.getProduto() instanceof MedicamentoInjetavel) {
-                    somaDesconto += carrinhoDeProduto.getProduto().desconto(((MedicamentoInjetavel) carrinhoDeProduto.getProduto()).getValor());
-                }
+            }
+            if (carrinhoDeProduto.getProduto() instanceof MedicamentoControlado) {
+                somaDesconto += carrinhoDeProduto.getProduto().desconto(((MedicamentoControlado) carrinhoDeProduto.getProduto()).getValor());
+            }
+            if (carrinhoDeProduto.getProduto() instanceof MedicamentoInjetavel) {
+                somaDesconto += carrinhoDeProduto.getProduto().desconto(((MedicamentoInjetavel) carrinhoDeProduto.getProduto()).getValor());
             }
         }
-
         if(idadeCliente > 60 && somaCompra > 100){
             somaDesconto += 10;
         }
-
         return somaDesconto;
     }
-
-
-
     private static double somaValorProdutos(ArrayList<ItemVenda> carrinhoDeProdutos){
         double soma = 0;
-        for (int i = 0; i < carrinhoDeProdutos.size(); i++) {
-            soma += carrinhoDeProdutos.get(i).getValorTotal();
+        for (ItemVenda carrinhoDeProduto : carrinhoDeProdutos) {
+            soma += carrinhoDeProduto.getValorTotal();
         }
         return soma;
     }
-
-
     private static int geradorCodigo(){
         int codVenda = 1;
         while(autenticadorCodigoVenda(codVenda)) {
@@ -174,8 +160,8 @@ public class ControleVenda {
     }
 
     private static boolean autenticadorCodigoVenda(int cod){
-        for (int i = 0; i < listaDeVendas.size(); i++) {
-            if(listaDeVendas.get(i).getCodigo() == cod){
+        for (Venda listaDeVenda : listaDeVendas) {
+            if (listaDeVenda.getCodigo() == cod) {
                 return true;
             }
         }
@@ -183,8 +169,12 @@ public class ControleVenda {
     }
 
     private static void imprimirVendas(){
-        for (int i = 0; i < listaDeVendas.size(); i++) {
-            System.out.println(listaDeVendas.get(i).exibirDadosVenda());
-        }
+          if(listaDeVendas.size() > 0){
+              for (Venda listaDeVenda : listaDeVendas) {
+                  System.out.println(listaDeVenda.exibirDadosVenda());
+              }
+              return;
+          }
+          System.out.println("\nNão há itens.\n");
     }
 }

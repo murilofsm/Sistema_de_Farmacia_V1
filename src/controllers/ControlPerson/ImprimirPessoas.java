@@ -29,37 +29,33 @@ public class ImprimirPessoas {
                 default -> System.out.println("Opção incorreta, tente novamente.");
             }
         }while(travaTela);
-
     }
 
     private static void buscarCliente(){
-        System.out.println("Insira o código do cliente: ");
+        System.out.print("Insira o código do cliente: ");
         int codigo = Input.nextInt();
 
-        try{
-            for(Cliente lista : ControlePessoas.listaClientes){
-                if(lista.getCodigo() == codigo){
-                    System.out.println(lista.exibirDadosCliente());
-                }
+        for(Cliente lista : ControlePessoas.listaClientes){
+            if(lista.getCodigo() == codigo){
+                System.out.println(lista.exibirDadosCliente());
+                return;
             }
-        }catch(Exception ex){
-            System.out.println("Cliente não encontrado !");
         }
+        System.err.println("\nCliente não encontrado !!\n");
     }
     private static void buscarFuncionario(){
-        System.out.println("Insira o código do funcionario: ");
-        int codigo = Input.nextInt();
+        System.out.print("Insira o código do funcionario: ");
+        int codigoBuscaFunc = Input.nextInt();
 
-       try {
-           for(Funcionario lista : ControlePessoas.listaFuncionarios){
-               if(lista.getCodigo() == codigo){
-                   System.out.println(lista.exibirDadosFuncionario());
-               }
-           }
-       }catch(Exception ex){
-           System.out.println("Funcionário não encontrado");
-       }
+        for(Funcionario lista : ControlePessoas.listaFuncionarios){
+            if(lista.getCodigo() == codigoBuscaFunc){
+                System.out.println(lista.exibirDadosFuncionario());
+                return;
+            }
+        }
+        System.err.println("\nFuncionário não encontrado !!!\n");
     }
+
     protected static void imprimirListaCliente(){
         for (int i = 0; i < ControlePessoas.listaClientes.size(); i++) {
             System.out.println(ControlePessoas.listaClientes.get(i).exibirDadosCliente());

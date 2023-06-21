@@ -43,7 +43,7 @@ public class ItemVenda {
         this.valorTotal = valorTotal;
     }
 
-    public String exibirDadosItenVenda() {
+    public String exibirDadosItemVenda() {
         return "\nProduto: " + getProduto().getDescricao() +
                 "\nQuantidade: " + getQuantidade() +
                 "\nValor Unidade: " + getValorUnidade() +

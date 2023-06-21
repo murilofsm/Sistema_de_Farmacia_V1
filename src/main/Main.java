@@ -6,19 +6,18 @@ import controllers.ControlVendas.ControleVenda;
 import util.Input;
 
 public class Main {
-    public static void main(String[] args) {
-        //ControlePessoas.menuControlePessoa();
+    public static void main(String[] args){
         menuPrincipal();
     }
 
-    public static void menuPrincipal(){
+    public static void menuPrincipal() {
         boolean travaTela = true;
 
         do{
             System.out.println("======Menu Principal======");
-            System.out.println("| 1 - Controle Pessoa    |");
-            System.out.println("| 2 - Controle Produto   |");
-            System.out.println("| 3 - Realizar Venda     |");
+            System.out.println("| 1 - Controle Pessoa    |"); // cadastro de funcionario, cliente além de buscar e imprimir eles
+            System.out.println("| 2 - Controle Produto   |"); // cadastro de produtos, e imprimir os produtos
+            System.out.println("| 3 - Realizar Venda     |");// aonde adiciona os produtos no carrinho para criar uma nova venda
             System.out.println("| 4 - Controle Venda     |");// aonde vai para imprimir as vendas
             System.out.println("| 0 - Voltar             |");
             System.out.println("==========================");
@@ -33,6 +32,6 @@ public class Main {
                 default -> System.out.println("Opção incorreta, tente novamente.");
             }
         }while(travaTela);
+        System.out.println("Até mais !!!");
     }
-
 }

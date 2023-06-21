@@ -35,23 +35,27 @@ public class CadastroProduto {
         ControleProdutos.setarDadosProduto(produto);
         ControleProdutos.listaTodosProdutos.add(produto);
         ControleProdutos.listaProdutosNormais.add(produto);
+        System.out.println("Produto com o código "+ produto.getCodigo() + "  cadastrado com sucesso.");
     }
     private static void cadastrarMedicamento(){
         Medicamento med = new Medicamento();
         ControleProdutos.setarDadosMedicamento(med);
         ControleProdutos.listaTodosProdutos.add(med);
         ControleProdutos.listaMedicamentos.add(med);
+        System.out.println("Produto com o código"+ med.getCodigo() + " cadastrado com sucesso.");
     }
     private static void cadastrarMedicamentoControlado(){
         MedicamentoControlado medCon = new MedicamentoControlado();
         ControleProdutos.setarDadosMedicamento(medCon);
         ControleProdutos.listaTodosProdutos.add(medCon);
         ControleProdutos.listaMedicamentosControlados.add(medCon);
+        System.out.println("Produto com o código: "+ medCon.getCodigo() + " cadastrado com sucesso.");
     }
     private static void cadastrarMedicamentoInjetavel(){
         MedicamentoInjetavel medInj = new MedicamentoInjetavel();
         ControleProdutos.setarDadosMedicamento(medInj);
         ControleProdutos.listaTodosProdutos.add(medInj);
         ControleProdutos.listaMedicamentosInjetaveis.add(medInj);
+        System.out.println("Produto com o código: "+ medInj.getCodigo() + " cadastrado com sucesso.");
     }
 }

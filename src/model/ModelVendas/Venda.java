@@ -97,12 +97,6 @@ public class Venda {
                 "  Data: " + getData() +
                 "  Valor dos produtos: " + getValorProdutos() +
                 "  Desconto Total: " + getDesconto() +
-                "  Valor total da Venda: " + getValorTotal()
-
-                ;
-
-
+                "  Valor total da Venda: " + getValorTotal();
     }
-
-
 }

@@ -1,6 +1,5 @@
 package controllers.ControlProducts;
 
-import model.ModelPerson.Cliente;
 import model.ModelProducts.Medicamento;
 import model.ModelProducts.MedicamentoControlado;
 import model.ModelProducts.MedicamentoInjetavel;
@@ -11,7 +10,6 @@ import java.util.ArrayList;
 
 public class ControleProdutos {
     public static ArrayList<Produto> listaTodosProdutos = new ArrayList<>();
-
     public static ArrayList<Produto> listaProdutosNormais = new ArrayList<>();
     public static ArrayList<Medicamento> listaMedicamentos = new ArrayList<>();
     public static ArrayList<MedicamentoControlado> listaMedicamentosControlados = new ArrayList<>();
@@ -38,9 +36,9 @@ public class ControleProdutos {
     }
 
     public static Produto buscarProduto(int codigoProduto){
-        for (int i = 0; i < listaTodosProdutos.size(); i++) {
-            if(listaTodosProdutos.get(i).getCodigo() == (codigoProduto)){
-                return listaTodosProdutos.get(i);
+        for (Produto listaTodosProduto : listaTodosProdutos) {
+            if (listaTodosProduto.getCodigo() == (codigoProduto)) {
+                return listaTodosProduto;
             }
         }
         return null;

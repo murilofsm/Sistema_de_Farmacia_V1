@@ -29,25 +29,25 @@ public class ImprimirProdutos {
     }
 
     private static void imprimirProdutosNormais(){
-        System.out.println("Produtos Normais: \n");
+        System.out.println("\nProdutos Normais: \n");
         for(int i=0; i < ControleProdutos.listaProdutosNormais.size(); i++){
             System.out.println(ControleProdutos.listaProdutosNormais.get(i).exibirDadosProduto());
         }
     }
     private static void imprimirMedicamentos(){
-        System.out.println("Medicamentos Normais: \n");
+        System.out.println("\nMedicamentos Normais: \n");
         for(int i=0; i < ControleProdutos.listaMedicamentos.size(); i++){
             System.out.println(ControleProdutos.listaMedicamentos.get(i).exibirDadosProduto());
         }
     }
     private static void imprimirMedicamentosControlados(){
-        System.out.println("Medicamentos Controlados: \n");
+        System.out.println("\nMedicamentos Controlados:\n");
         for(int i=0; i < ControleProdutos.listaMedicamentosControlados.size(); i++){
             System.out.println(ControleProdutos.listaMedicamentosControlados.get(i).exibirDadosProduto());
         }
     }
     private static void imprimirMedicamentosInjetaveis(){
-        System.out.println("Medicamentos Injetáveis: \n");
+        System.out.println("\nMedicamentos Injetáveis:\n");
         for(int i=0; i < ControleProdutos.listaMedicamentosInjetaveis.size(); i++){
             System.out.println(ControleProdutos.listaMedicamentosInjetaveis.get(i).exibirDadosProduto());
         }
@@ -55,8 +55,8 @@ public class ImprimirProdutos {
     private static void imprimirTodos() {
         imprimirProdutosNormais();
         imprimirMedicamentos();
-        imprimirMedicamentosInjetaveis();
         imprimirMedicamentosControlados();
+        imprimirMedicamentosInjetaveis();
     }
 
 }

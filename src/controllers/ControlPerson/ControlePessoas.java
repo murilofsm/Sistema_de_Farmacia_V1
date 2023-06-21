@@ -24,7 +24,7 @@ public class ControlePessoas {
                 case 1 -> CadastrosPessoa.menuCadastroPessoa();
                 case 2 -> ImprimirPessoas.menuImprimirPessoa();
                 case 0 -> travaTela = false;
-                default -> System.out.println("Opção incorreta, tente novamente.");
+                default -> System.out.println("\nOpção incorreta, tente novamente.\n");
             }
         }while(travaTela);
     }
@@ -41,7 +41,7 @@ public class ControlePessoas {
     protected static void setarDadosCliente(Cliente cli){
         setarDadosPessoa(cli);
         int cod;
-        System.out.print("Insira o email:");
+        System.out.print("Insira o email: ");
         cli.setEmail(Input.nextLine());
         cod = geradorCodigo("cliente");
         cli.setCodigo(cod);
@@ -101,9 +101,9 @@ public class ControlePessoas {
     }
 
     public static Funcionario autenticadorFuncionario(int codFuncionario){
-        for (int i = 0; i < listaFuncionarios.size(); i++) {
-            if (listaFuncionarios.get(i).getCodigo() == codFuncionario) {
-                return listaFuncionarios.get(i);
+        for (Funcionario listaFuncionario : listaFuncionarios) {
+            if (listaFuncionario.getCodigo() == codFuncionario) {
+                return listaFuncionario;
             }
         }
         System.err.println("\nFuncionario não encontrado, digite novamente\n");
