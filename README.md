@@ -1,10 +1,11 @@
-# AS_JAVA_v1
 
-Atividade Supervisionada – (AS)
-Disciplina: Fundamentos de Orientação a Objetos
+
+##Atividade Supervisionada – (AS)<br/>
+#Disciplina: Fundamentos de Orientação a Objetos<br/>
 Utilizando a linguagem de programação JAVA ou C# e os conceitos de Orientação a Objetos. Desenvolva um
-sistema para venda de produtos em farmácias e drogarias, de acordo com o Diagrama de classes abaixo.
-![image](https://github.com/murilofsm/AS_JAVA_v1/assets/96501309/e4caf209-008c-4c51-a4e0-be5857bfb09a)
+sistema para venda de produtos em farmácias e drogarias, de acordo com o Diagrama de classes abaixo.<br/>
+
+![image](https://github.com/murilofsm/AS_JAVA_v1/assets/96501309/e4caf209-008c-4c51-a4e0-be5857bfb09a)<br/>
 
 As farmácias e drogarias vendem uma variedade de produtos, dentre eles: cosméticos, perfumes, produtos de higiene pessoal,
 além dos medicamentos. No entanto, os medicamentos, apresentam informações e procedimentos específicos. Tais como: número
