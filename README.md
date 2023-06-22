@@ -1,7 +1,7 @@
 
 
-<h1>Atividade Supervisionada – (AS)<br/>
-<h2>Disciplina: Fundamentos de Orientação a Objetos<br/>
+<h1>Atividade Supervisionada – (AS)<br/><br/>
+<h2>Disciplina: Fundamentos de Orientação a Objetos<br/><br/>
   
 Utilizando a linguagem de programação JAVA ou C# e os conceitos de Orientação a Objetos. Desenvolva um
 sistema para venda de produtos em farmácias e drogarias, de acordo com o Diagrama de classes abaixo.<br/>
