@@ -1,7 +1,7 @@
 
 
 <h1>Atividade Supervisionada – (AS)</h1><br/><br/>
-<h2>Disciplina: Fundamentos de Orientação a Objetos</h2><br/><br/>
+Disciplina: Fundamentos de Orientação a Objetos<br/><br/>
   
 Utilizando a linguagem de programação JAVA ou C# e os conceitos de Orientação a Objetos. Desenvolva um
 sistema para venda de produtos em farmácias e drogarias, de acordo com o Diagrama de classes abaixo.<br/>
@@ -23,7 +23,7 @@ b. Medicamentos em geral, 10 % de desconto.<br/>
 c. Medicamentos de uso controla, 3 % de desconto.<br/>
 d. Medicamentos injetáveis, Não aplicar desconto.<br/>
 e. Além disso, para os clientes com mais de 60 anos, aplicar R$ 10,00 de desconto para as compras acima de
-R$ 100,00<br/>
+R$ 100,00<br/><br/>
 Atenção: Utilize polimorfismo para obter o percentual de desconto em cada tipo de produto. Utilize o herança entre as classe
 conforme consta no diagrama de classes. Aplique os conceitos de Orientação a Objetos no desenvolvimento do sistema.<br/>
 O sistema deverá fornecer as seguintes funcionalidades:<br/>
