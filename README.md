@@ -25,7 +25,7 @@ e. Além disso, para os clientes com mais de 60 anos, aplicar R$ 10,00 de descon
 R$ 100,00<br/>
 Atenção: Utilize polimorfismo para obter o percentual de desconto em cada tipo de produto. Utilize o herança entre as classe
 conforme consta no diagrama de classes. Aplique os conceitos de Orientação a Objetos no desenvolvimento do sistema.<br/>
-O sistema deverá fornecer as seguintes funcionalidades:
+O sistema deverá fornecer as seguintes funcionalidades:<br/>
 a) Cadastrar Cliente e Funcionário;<br/>
 b) Cadastrar Produtos;<br/>
 c) Realizar Venda;<br/>
